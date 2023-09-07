@@ -1,11 +1,11 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Main from "./Componets/Main";
+import Main from "./Components/Main";
 
 function App() {
   return (
     <div className="App">
-      <Main/>
+      <Main />
     </div>
   );
 }

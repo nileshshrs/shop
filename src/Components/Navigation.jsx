@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Row, Col, Button, Container, Navbar } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import { FaPhoneAlt, FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
