@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "../Pages/Home";
 import Footer from "./Footer";
 import Footerbottom from "./FooterBottom";
-import Product from "../Pages/Product";
+import Products from "../Pages/Products";
 
 const Main = () => {
   return (
@@ -12,7 +12,7 @@ const Main = () => {
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/product" element={<Product />} />
+        <Route path="/products" element={<Products />} />
       </Routes>
       <Footer />
       <Footerbottom />
