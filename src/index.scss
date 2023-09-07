@@ -1,0 +1,171 @@
+:root {
+  -fz-xxs: 12px;
+  --fz-xs: 13px;
+  --fz-sm: 14px;
+  --fz-md: 16px;
+  --fz-lg: 18px;
+  --fz-xl: 20px;
+  --fz-xxl: 22px;
+  --fz-heading: 32px;
+  --orange: #fe9126;
+  --light-black: #333333;
+  --dark-black: #000;
+  --white: #ffffff;
+  --fz-heading: 32px;
+  --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  --border-radius: 4px;
+  --hamburger-width: 30px;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1 !important;
+}
+a {
+  text-decoration: none;
+}
+body {
+  #root {
+    .App {
+      .oJmKs {
+        font-weight: 600;
+        background-color: var(--light-black);
+        color: var(--white);
+        .pXwYq {
+          gap: 20px;
+          span {
+            a {
+              color: var(--orange);
+            }
+          }
+          .tIzVe {
+            a {
+              color: var(--white);
+            }
+          }
+        }
+      }
+      .bGhLo {
+        .aUvRn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          p {
+            color: var(--dark-black);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+          }
+        }
+        .hGdLb {
+          h1 {
+            font-weight: bold;
+            font-size: clamp(26px, 5vw, var(--fz-heading));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--orange);
+          }
+        }
+        .mDnZa {
+          form {
+            input {
+              border-radius: var(--border-radius);
+              height: 34px;
+              padding: 10px;
+              border: 1px solid gray;
+              width: 75%;
+            }
+            button {
+              background-color: var(--orange);
+              border: none;
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+      .rQtWu {
+        background-color: var(--orange);
+        color: var(--white);
+        ul {
+          list-style: none;
+          li {
+            a {
+              color: var(--white);
+              font-weight: 500;
+            }
+            .hamburger-btn {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              z-index: 9999;
+              height: 30px;
+              width: 30px;
+              background: transparent;
+              border: none;
+              .hamburger-inner {
+                width: var(--hamburger-width);
+                background-color: var(--white);
+                height: 2px;
+                width: 100%;
+                position: relative;
+              }
+              .hamburger-inner::before,
+              .hamburger-inner::after {
+                content: ""; /* Adding content to pseudo-elements */
+                background-color: var(
+                  --white
+                ); /* Using the same background color */
+                height: 2px;
+                position: absolute;
+                transition: var(--transition);
+              }
+              .hamburger-inner::before {
+                width: 30px;
+                top: -10px; /* Adjust as needed */
+                right: 0;
+              }
+
+              .hamburger-inner::after {
+                width: 30px; /* Adjust as needed */
+                top: 10px; /* Adjust as needed */
+                right: 0;
+              }
+
+              .hamburger-inner.cross::before {
+                width: 30px;
+                top: 0;
+                left: 0;
+                transform: rotate(90deg) translate(0, 0);
+              }
+              .hamburger-inner.cross::after {
+                display: none;
+              }
+
+              .hamburger-inner.cross {
+                width: 30px;
+                top: 0;
+                left: 0;
+                transform: rotate(-135deg) translate(0, 0);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
