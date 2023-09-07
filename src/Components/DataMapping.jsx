@@ -5,11 +5,9 @@ import { ToastContainer } from "react-toastify";
 import Loader from "./Loader";
 
 const Datamapping = ({ products, loading }) => {
-  //   if (loading) {
-  //     return (
-  //         <Loader/>
-  //     );
-  //   }
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <>
       <Row className="mx-auto px-5">
@@ -17,7 +15,7 @@ const Datamapping = ({ products, loading }) => {
           return (
             <Col lg={4} md={6} sm={12} className="g-5 px-4" key={items.id}>
               <Card
-                style={{ height: "350px", gap: "2rem", borderRadius: "0",}}
+                style={{ height: "350px", gap: "2rem", borderRadius: "0" }}
                 className="d-flex flex-column justify-content-center align-items-center py-3 card"
               >
                 <Link to={`${items.id}`}>

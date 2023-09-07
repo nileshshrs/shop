@@ -3,17 +3,17 @@ import { Col, Container, Row } from "react-bootstrap";
 import { FaArrowRight, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
 import { Link, useNavigate } from "react-router-dom";
-// import { useAuthContext } from "../Context/useAuthContext";
-// import { useLogout } from "../Context/useLogout";
+import { useAuthContext } from "../Context/useAuthContext";
+import { useLogout } from "../Context/useLogout";
 
 const Footer = () => {
-//   const { user } = useAuthContext();
-//   const { logout } = useLogout();
-//   const Navigate = useNavigate();
-//   const handleClick = () => {
-//     Navigate("/login");
-//     logout();
-//   };
+  const { user } = useAuthContext();
+  const { logout } = useLogout();
+  const Navigate = useNavigate();
+  const handleClick = () => {
+    Navigate("/login");
+    logout();
+  };
   return (
     <Container
       fluid
@@ -294,7 +294,7 @@ const Footer = () => {
                 </li>
                 <li className="py-2">
                   <FaArrowRight />
-                  {/* {user ? (
+                  {user ? (
                     <Link
                       style={{
                         color: "#AFAFAF",
@@ -321,10 +321,10 @@ const Footer = () => {
                     >
                       Login
                     </Link>
-                  )} */}
+                  )}
                 </li>
                 <li className="py-2">
-                  {/* {user ? null : (
+                  {user ? null : (
                     <>
                       <FaArrowRight />
                       <Link
@@ -340,7 +340,7 @@ const Footer = () => {
                         Create Account
                       </Link>
                     </>
-                  )} */}
+                  )}
                 </li>
               </ul>
             </div>
