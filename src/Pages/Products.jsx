@@ -49,11 +49,11 @@ const Products = () => {
           </span>
         </Container>
       </Container>
-      <Row fluid className="px-0 g-5 w-100 mx-auto">
-        <Col lg={4} md={12} sm={12} className="px-5 g-3 mx-0 mt-5">
+      <Row fluid className="px-0 g-5 w-100 mx-auto ">
+        <Col lg={4} md={12} sm={12} className="mx-0 mt-5">
           <Sidebar />
         </Col>
-        <Col lg={8} md={12} sm={12} className="p-3">
+        <Col lg={8} md={12} sm={12} className="py-5">
           <select
             className="form-select ms-auto"
             id="floatingSelect"
@@ -72,14 +72,13 @@ const Products = () => {
             <option value="118">Display all items</option>
           </select>
           <Datamapping products={currentProduct} loading={loading} />
-
         </Col>
       </Row>
       <Pagination
-            productPerPage={productPerPage}
-            totalProducts={products.length}
-            paginate={paginate}
-          />
+        productPerPage={productPerPage}
+        totalProducts={products.length}
+        paginate={paginate}
+      />
     </>
   );
 };

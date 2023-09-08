@@ -44,9 +44,9 @@ const Login = () => {
           </span>
         </Container>
       </Container>
-      <Container className="d-flex justify-content-center text-align-center">
+      <Container className="d-flex justify-content-center text-align-center w-100">
         <section className="mt-5">
-          <form onSubmit={handleSubmit} className="">
+          <form onSubmit={handleSubmit} className="asdf">
             <h2 style={{ color: "#fe9126", fontWeight: "500" }}>Sign In</h2>
             {error && <div className="errmsg">{error}</div>}
             <label htmlFor="email" style={{ fontWeight: "500" }}>

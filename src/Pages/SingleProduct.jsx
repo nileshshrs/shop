@@ -3,7 +3,7 @@ import { Button, Container } from "react-bootstrap";
 import { FaHome } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-
+import { addToCart } from "../Components/AddToCart";
 
 const SingleProduct = () => {
   const params = useParams();
@@ -137,6 +137,9 @@ const SingleProduct = () => {
                 backgroundColor: "#3399cc",
                 border: "none",
                 borderRadius: "0",
+              }}
+              onClick={(e) => {
+                addToCart(e, productDetails.id, productDetails.unitPrice[0].id);
               }}
             >
               Add to Cart

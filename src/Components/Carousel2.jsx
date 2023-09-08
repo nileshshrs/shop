@@ -7,8 +7,8 @@ import carousel3 from "../Assets/images/b1.jpg";
 
 const Carousel2 = () => {
   return (
-    <Container fluid className="px-0 py-5 mt-5">
-      <Carousel indicators={true} controls={false} className="mb-5">
+    <Container fluid className="px-0 py-5 mt-5 w-100">
+      <Carousel indicators={true} controls={false} className="mb-5 w-100">
         <Carousel.Item>
           <img
             className="d-block w-100"

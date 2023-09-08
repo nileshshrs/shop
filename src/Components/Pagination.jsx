@@ -6,11 +6,14 @@ const Pagination = ({ productPerPage, totalProducts, paginate }) => {
     pageNumbers.push(i);
   }
   return (
-    <nav className="d-flex mt-5 justify-content-center p-0 pagination-nav w-50 mx-auto">
-      <ul className="pagination text-end" >
+    <nav
+      className="d-flex mt-5 justify-content-center p-0 pagination-nav mx-auto"
+      style={{ Width: "200px" }}
+    >
+      <ul className="pagination pagination-sm text-end">
         {pageNumbers.map((number) => {
           return (
-            <li key={number} className="page-item" >
+            <li key={number} className="page-item">
               <a
                 href="#"
                 className="page-link"

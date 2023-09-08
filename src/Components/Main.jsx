@@ -7,8 +7,9 @@ import Footerbottom from "./FooterBottom";
 import Products from "../Pages/Products";
 import SingleProduct from "../Pages/SingleProduct";
 import { useAuthContext } from "../Context/useAuthContext";
-import Login from "../Pages/Login"
-import Register from "../Pages/Register"
+import Login from "../Pages/Login";
+import Register from "../Pages/Register";
+import Cart from "../Pages/Cart";
 const Main = () => {
   const { user } = useAuthContext();
   return (
@@ -17,6 +18,7 @@ const Main = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/products/:productID" element={<SingleProduct />} />
         <Route
           path="/login"

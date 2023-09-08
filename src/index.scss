@@ -33,12 +33,113 @@ h4,
 h5,
 h6 {
   line-height: 1.1 !important;
+  font-weight: bold !important;
+  font-size: clamp(26px, 5vw, var(--fz-heading)) !important;
 }
 a {
   text-decoration: none;
 }
+
+section {
+  width: 100%;
+  max-width: 420px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  background-color: #f3f3f3;
+}
+section.forgot-password {
+  width: 100%;
+  max-width: 420px;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  background-color: #f3f3f3;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  padding-bottom: 1rem;
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"] button,
+  textarea {
+    font-size: 16px;
+    padding: 0.25rem;
+  }
+  label,
+  button {
+    margin-top: 1rem;
+  }
+  button {
+    padding: 0.5rem;
+  }
+}
+.instructions {
+  font-size: 0.75rem;
+  border-radius: 0;
+  background: #000;
+  color: #fff;
+  padding: 0.25rem;
+  position: relative;
+  bottom: -10px;
+}
+.instructions > svg {
+  margin-right: 0.25rem;
+}
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.hide {
+  display: none;
+}
+
+.valid {
+  color: limegreen;
+  margin-left: 0.25rem;
+}
+
+.invalid {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+.errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.line {
+  display: inline-block;
+}
+.logout-btn:hover {
+  background-color: #f2a85d !important;
+  border: 1px solid #fe9126 !important;
+  color: white !important;
+}
+.login-btn:hover {
+  background-color: #fe9126 !important;
+  transition: var(--transition);
+}
+.top-navigate {
+  flex-direction: row;
+}
 body {
+  overflow-x: hidden;
   #root {
+    margin: 0 auto;
     .App {
       .oJmKs {
         font-weight: 600;
@@ -83,6 +184,8 @@ body {
         }
         .mDnZa {
           form {
+            flex-direction: row !important;
+            padding: 0;
             input {
               border-radius: var(--border-radius);
               height: 34px;
@@ -91,7 +194,7 @@ body {
               width: 75%;
             }
             button {
-              background-color: var(--orange);
+              background-color: var(--orange) !important;
               border: none;
               margin-left: 5px;
             }
@@ -101,6 +204,7 @@ body {
       .rQtWu {
         background-color: var(--orange);
         color: var(--white);
+        width: 100%;
         ul {
           list-style: none;
           li {
@@ -108,68 +212,77 @@ body {
               color: var(--white);
               font-weight: 500;
             }
-            .hamburger-btn {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              z-index: 9999;
-              height: 30px;
-              width: 30px;
-              background: transparent;
-              border: none;
-              .hamburger-inner {
-                width: var(--hamburger-width);
-                background-color: var(--white);
-                height: 2px;
-                width: 100%;
-                position: relative;
-              }
-              .hamburger-inner::before,
-              .hamburger-inner::after {
-                content: ""; /* Adding content to pseudo-elements */
-                background-color: var(
-                  --white
-                ); /* Using the same background color */
-                height: 2px;
-                position: absolute;
-                transition: var(--transition);
-              }
-              .hamburger-inner::before {
-                width: 30px;
-                top: -10px; /* Adjust as needed */
-                right: 0;
-              }
-
-              .hamburger-inner::after {
-                width: 30px; /* Adjust as needed */
-                top: 10px; /* Adjust as needed */
-                right: 0;
-              }
-
-              .hamburger-inner.cross::before {
-                width: 30px;
-                top: 0;
-                left: 0;
-                transform: rotate(90deg) translate(0, 0);
-              }
-              .hamburger-inner.cross::after {
-                display: none;
-              }
-
-              .hamburger-inner.cross {
-                width: 30px;
-                top: 0;
-                left: 0;
-                transform: rotate(-135deg) translate(0, 0);
-              }
-            }
           }
+        }
+        .hamburger-btn {
+          display: none;
+          justify-content: center;
+          align-items: center;
+          z-index: 9999;
+          height: 30px;
+          width: 30px;
+          background: transparent;
+          border: none;
+          .hamburger-inner {
+            width: var(--hamburger-width);
+            background-color: var(--white);
+            height: 2px;
+            width: 100%;
+            position: relative;
+          }
+          .hamburger-inner::before,
+          .hamburger-inner::after {
+            content: ""; /* Adding content to pseudo-elements */
+            background-color: var(
+              --white
+            ); /* Using the same background color */
+            height: 2px;
+            position: absolute;
+            transition: var(--transition);
+          }
+          .hamburger-inner::before {
+            width: 30px;
+            top: -10px; /* Adjust as needed */
+            right: 0;
+          }
+
+          .hamburger-inner::after {
+            width: 30px; /* Adjust as needed */
+            top: 10px; /* Adjust as needed */
+            right: 0;
+          }
+
+          .hamburger-inner.cross::before {
+            width: 30px;
+            top: 0;
+            left: 0;
+            transform: rotate(90deg) translate(0, 0);
+          }
+          .hamburger-inner.cross::after {
+            display: none;
+          }
+
+          .hamburger-inner.cross {
+            width: 30px;
+            top: 0;
+            left: 0;
+            transform: rotate(-135deg) translate(0, 0);
+          }
+        }
+      }
+      carousel-1 {
+        h3 {
+          font-size: clamp(26px, 5vw, var(--fz-heading)) !important;
         }
       }
       .brandStore {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
         gap: 2rem;
+        h3{
+          font-weight: bold !important;
+          font-size: clamp(26px, 5vw, var(--fz-heading)) !important;
+        }
       }
       .parent {
         display: flex;
@@ -193,6 +306,144 @@ body {
           100% {
             transform: rotate(360deg);
           }
+        }
+      }
+      .productContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 35px;
+        margin-top: 40px;
+        place-items: center;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1070px) {
+  #root {
+    .App {
+      .oJmKs {
+        .pXwYq {
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
+        }
+      }
+      .bGhLo {
+        flex-direction: column;
+        gap: 20px;
+        .hGdLb {
+          order: -1;
+        }
+        .aUvRn {
+          order: 2;
+        }
+      }
+
+      .mDnZa {
+      }
+      .rQtWu {
+        padding: 10px;
+        align-items: flex-end !important;
+        ul {
+          display: none !important;
+        }
+        .hamburger-btn {
+          display: flex !important;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 512px) and (max-width: 768px) {
+  #root {
+    .App {
+      .oJmKs {
+        .pXwYq {
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
+          .tIzVe {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 20px;
+            width: 100% !important;
+            place-items: center;
+            place-content: center;
+            a {
+              grid-column: 1;
+              grid-row: 2;
+            }
+          }
+        }
+      }
+      .bGhLo {
+        flex-direction: column;
+        gap: 20px;
+        .hGdLb {
+          order: -1;
+        }
+        .aUvRn {
+          order: 2;
+        }
+      }
+      .rQtWu {
+        padding: 10px;
+        align-items: flex-end !important;
+        ul {
+          display: none !important;
+        }
+        .hamburger-btn {
+          display: flex !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 512px) {
+  #root {
+    .footer-bottom {
+      flex-direction: column !important;
+      gap: 20px;
+    }
+    .App {
+      .oJmKs {
+        .pXwYq {
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
+          .tIzVe {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 20px;
+            width: 100% !important;
+            place-items: center;
+            place-content: center;
+            a {
+              grid-column: 1;
+              grid-row: 2;
+            }
+          }
+        }
+      }
+      .bGhLo {
+        flex-direction: column;
+        gap: 20px;
+        .hGdLb {
+          order: -1;
+        }
+        .aUvRn {
+          order: 2;
+        }
+      }
+      .rQtWu {
+        padding: 10px;
+        align-items: flex-end !important;
+        ul {
+          display: none !important;
+        }
+        .hamburger-btn {
+          display: flex !important;
         }
       }
     }

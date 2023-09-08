@@ -6,7 +6,12 @@ import { Carousel } from "react-bootstrap";
 
 const Carousel1 = () => {
   return (
-    <Carousel fade indicators={false} controls={false} className="mb-5 w-100">
+    <Carousel
+      fade
+      indicators={false}
+      controls={false}
+      className="mb-5 w-100 carousel-1"
+    >
       <Carousel.Item>
         <img
           className="d-block w-100"
@@ -14,13 +19,15 @@ const Carousel1 = () => {
           alt="First slide"
           style={{ height: "500px", objectFit: "cover" }}
         />
-        <Carousel.Caption style={{ marginBottom: "8rem" }}>
+        <Carousel.Caption style={{ marginBottom: "30px" }}>
           <h3
             style={{
               fontWeight: "500",
               letterSpacing: "1.5px",
               lineHeight: "1.5",
-              fontSize: "3.5rem",
+              fontWeight: "bold",
+              fontSize: "clamp(18px, 5vw, var(22px))",
+              Width: "100%",
             }}
           >
             WHOLE SPICES PRODUCTS ARE <br />
@@ -36,13 +43,15 @@ const Carousel1 = () => {
           style={{ height: "500px", objectFit: "cover" }}
         />
 
-        <Carousel.Caption style={{ marginBottom: "8rem" }}>
+        <Carousel.Caption style={{ marginBottom: "30px" }}>
           <h3
             style={{
               fontWeight: "500",
               letterSpacing: "1.5px",
               lineHeight: "1.5",
-              fontSize: "3.5rem",
+              fontWeight: "bold",
+              fontSize: "clamp(18px, 5vw, var(22px))",
+              Width: "100%",
             }}
           >
             BUY RICE PRODUCTS ARE NOW <br /> ON LINE WITH US
@@ -57,13 +66,15 @@ const Carousel1 = () => {
           style={{ height: "500px", objectFit: "cover" }}
         />
 
-        <Carousel.Caption style={{ marginBottom: "8rem" }}>
+        <Carousel.Caption style={{ marginBottom: "20px" }}>
           <h3
             style={{
               fontWeight: "500",
               letterSpacing: "1.5px",
               lineHeight: "1.5",
-              fontSize: "3.5rem",
+              fontWeight: "bold",
+              fontSize: "clamp(18px, 5vw, var(32px))",
+              Width: "100%",
             }}
           >
             WHOLE SPICES PRODUCTS ARE <br />
