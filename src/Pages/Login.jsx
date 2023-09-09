@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import { FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useSignin } from "../Context/useSignin";
+import Loader from "../Components/Loader";
 
 const Login = () => {
   const { signin, error, isLoading } = useSignin();
